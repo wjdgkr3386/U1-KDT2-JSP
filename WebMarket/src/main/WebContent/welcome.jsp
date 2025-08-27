@@ -10,13 +10,8 @@
     >
   </head>
   <body>
-  <nav class="navbar navbar-expand navbar-dark bg-dark">
-	  <div class="container">
-	    <div class="navar-header">
-	      <a class="navbar-brand" href="./welcome.jsp">Home</a>    
-	    </div>
-	  </div>
- </nav>
+<%@ include file="menu.jsp" %>
+
    <%! String greeting = "Welcome to Web Shopping Mall";
    	   String tagline = "Welcome to Web  Market!";	
    %>
