@@ -17,6 +17,19 @@
 아이디:<jsp:getProperty property="id" name="member"/> <br>
 <!-- member.getName(); -->
 이름:<jsp:getProperty property="name" name="member"/>
+<hr>
+<jsp:useBean id="date" class="java.util.Date"/>
+<p>
+  오늘 날짜 및 시각:<%=date %>
+</p>
+<hr>
+<jsp:useBean id="bean" class="ch04.com.model.Calculator" />
+<%
+	int m = bean.process(5);
+    out.print("5의 3제곱 :"+m);
+%>
+
+
 </p>
 </body>
 </html>
