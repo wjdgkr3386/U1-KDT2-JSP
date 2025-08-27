@@ -1,4 +1,4 @@
-<%@ page contentType="text/html; charset=UTF-8"%>
+<%@ page contentType="application/msword"%>
 <!DOCTYPE html>
 <html>
 <head>
