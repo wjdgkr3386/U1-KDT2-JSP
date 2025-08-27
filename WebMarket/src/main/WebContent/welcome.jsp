@@ -12,10 +12,10 @@
   <body>
   <%!
      public String printTime(int val){
-	  if(val / 10 ==0){
-			return "0"+val;
+	  if( val / 10 == 0 ){ /* 정수 / 정수 = 정수  */   
+			return "0"+val; /* 문자열+숫자=문자열 */
 		}else 
-			return ""+val;
+			return ""+val;  /* 문자열+숫자=문자열 */
    }
   %>
   
