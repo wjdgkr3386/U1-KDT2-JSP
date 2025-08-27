@@ -1,4 +1,3 @@
-<%@ page contentType="text/html; charset=UTF-8"%>
   <nav class="navbar navbar-expand navbar-dark bg-dark">
 	  <div class="container">
 	    <div class="navar-header">
