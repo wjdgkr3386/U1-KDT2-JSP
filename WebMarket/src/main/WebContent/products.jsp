@@ -34,6 +34,7 @@
          	for(Product product : listOfProducts){
          %>		  
          <div class="col-md-4">
+            <img src="/upload/<%=product.getFilename() %>" style="width: 100%">
              <h3><%=product.getPname()%></h3>
              <p><%=product.getDescription()%></p>
              <p><%=product.getUnitsInStock()%></p>
