@@ -34,7 +34,10 @@ MultipartRequest multi = new MultipartRequest(
   /* 파일 정보 얻기 */   
     Enumeration files = multi.getFileNames();
     String fname = (String)files.nextElement();
-    String fileName = multi.getFilesystemName(name);
+    String fileName = multi.getFilesystemName(fname);
+    
+    System.out.println("파일명:"+fname);
+    System.out.println("업로드 파일명:"+fileName);
     
    /* ProductRepository 생성  */
    ProductRepository dao = ProductRepository.getInstance();

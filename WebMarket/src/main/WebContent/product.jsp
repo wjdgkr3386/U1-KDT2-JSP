@@ -1,6 +1,7 @@
+<%@page import="dao.ProductRepository"%>
 <%@page import="dto.Product"%>
 <%@ page contentType="text/html; charset=UTF-8"%>
-<jsp:useBean id="productDAO" class="dao.ProductRepository" scope="session"/>
+<%-- <jsp:useBean id="productDAO" class="dao.ProductRepository" scope="session"/> --%>
 <!doctype html>
 <html lang="en">
   <head>
@@ -20,6 +21,7 @@
       </div>
      </div>
      <%
+     ProductRepository productDAO = ProductRepository.getInstance();
       String id = request.getParameter("id");
       Product product = productDAO.getProductById(id);
      %>
