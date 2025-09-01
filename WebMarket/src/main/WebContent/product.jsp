@@ -13,6 +13,15 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
     <title>상품 상세 정보</title>
+    <script>
+    	function addToCart(){
+    		if(confirm("상품을 장바구니에 추가하시겠습니까?")){
+    			document.addForm.submit();//
+    		}else{
+    			document.addForm.reset();//
+    		}
+    	}
+    </script>
   </head>
   <body>
     <jsp:include page="menu.jsp"/>
@@ -40,8 +49,12 @@
           <p><b>분류 : </b><%=product.getCategory() %>
           <p><b>재고 수 : </b><%=product.getUnitsInStock() %>
           <h4><%=product.getUnitPrice() %>원</h4>
-          <p><a href="#" class="btn btn-info">상품 주문 &raquo;</a>
+          <p><form name="addForm" action="./addCart.jsp?id=<%=product.getProductId()%>" 
+                   method="post">
+             <a href="#" class="btn btn-info" onclick="addToCart()">상품 주문 &raquo;</a><!-- 카트등록 -->
+             <a href="./cart.jsp" class="btn btn-warning">장바구니 &raquo;</a><!-- 장바구 니리스트 -->
              <a href="./products.jsp" class="btn btn-secondary">상품 목록 &raquo;</a>
+          </form>
          </div>
        </div>
        <hr>
