@@ -12,6 +12,7 @@ import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebFilter;
 import javax.servlet.http.HttpFilter;
 
+@WebFilter("/ch12/filter01_process.jsp")
 public class AuthenFilter extends HttpFilter implements Filter {
 	public void init(FilterConfig fConfig) throws ServletException {
 		System.out.println("Filter01 초기화....");
