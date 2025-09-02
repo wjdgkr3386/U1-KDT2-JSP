@@ -10,5 +10,7 @@
 		out.print(conn==null?"연결실패":"연결성공");
 	}catch(Exception e){
 		out.print(e.getMessage());
+	}finally{
+		if(conn !=null) conn.close();/* 리소스 안전 제거 */
 	}
 %>
