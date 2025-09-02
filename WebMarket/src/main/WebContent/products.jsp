@@ -1,14 +1,13 @@
-<%@page import="dao.ProductRepository"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
 <%@page import="dto.Product"%>
-<%@page import="java.util.ArrayList"%>
-<%@ page contentType="text/html; charset=UTF-8"%>
-<%-- <jsp:useBean id="productDAO" class="dao.ProductRepository" scope="session" /> --%>
+<%@ page contentType="text/html; charset=utf-8"%>
 <!doctype html>
 <html lang="en">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>상품 목록</title>
     <link rel="stylesheet" 
     href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css"
     >
@@ -21,27 +20,26 @@
         <p class="lead text-muted mb-0">원하시는 상품을 선택해 자세한 정보를 확인하세요.</p>
       </div>
     </section>
-<!--      <div class="jubotron">
-        <div class="container">
-            <h1 class="display-3">상품 목록</h1>
-        </div>
-     </div> -->
+    <%@ include file="dbconn.jsp" %>
      <%
-        ProductRepository productDAO = ProductRepository.getInstance();
-     	ArrayList<Product> listOfProducts = productDAO.getAllProducts();
+        PreparedStatement pstmt = null;
+		ResultSet rs = null;
+          
+		String sql ="select * from product";
+		pstmt = conn.prepareStatement(sql);
+		rs = pstmt.executeQuery();
      %>
      <div class = "container">
        <div class="row" align="center">
          <%
-         	for(Product product : listOfProducts){
+         while(rs.next()){
          %>		  
          <div class="col-md-4">
-            <img src="/upload/<%=product.getFilename() %>" style="width: 100%">
-             <h3><%=product.getPname()%></h3>
-             <p><%=product.getDescription()%></p>
-             <p><%=product.getUnitsInStock()%></p>
-             <p><%=product.getUnitPrice()%>원</p>
-             <p><a class="btn btn-secondary" href="./product.jsp?id=<%=product.getProductId()%>">상세정보 &raquo;</a></p>
+            <img src="/upload/<%=rs.getString("p_fileName") %>" style="width: 100%">
+             <h3><%=rs.getString("p_name")%></h3>
+             <p><%=rs.getString("p_description")%></p>
+             <p><%=rs.getString("p_UnitPrice")%>원</p>
+             <p><a class="btn btn-secondary" href="./product.jsp?id=<%=rs.getString("p_id")%>">상세정보 &raquo;</a></p>
          </div> 		  
          <%		  
          	}
