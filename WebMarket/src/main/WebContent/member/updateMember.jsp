@@ -14,7 +14,7 @@
 	driver="com.mysql.jdbc.Driver" user="root" password="1234" />
 
 <sql:query dataSource="${dataSource}" var="resultSet">
-   SELECT * FROM MEMBER WHERE ID=?
+   SELECT * FROM member WHERE ID=?
    <sql:param value="<%=sessionId%>" />
 </sql:query>	
 <title>회원 수정</title>
