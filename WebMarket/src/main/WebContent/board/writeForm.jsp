@@ -5,22 +5,6 @@
 <link rel="stylesheet" href="./resources/css/bootstrap.min.css" />
 <title>Board</title>
 </head>
-<script type="text/javascript">
-	function checkForm() {
-		if (!document.newWrite.name.value) {
-			alert("성명을 입력하세요.");
-			return false;
-		}
-		if (!document.newWrite.subject.value) {
-			alert("제목을 입력하세요.");
-			return false;
-		}
-		if (!document.newWrite.content.value) {
-			alert("내용을 입력하세요.");
-			return false;
-		}		
-	}
-</script>
 <body>
 	<jsp:include page="../menu.jsp" />
 	<div class="jumbotron">
@@ -39,7 +23,7 @@
 				<label class="col-sm-2 control-label" >성명</label>
 				<div class="col-sm-3">
 					<input name="name" type="text" class="form-control" value="${name}"
-						placeholder="name">
+						placeholder="name" required>
 				</div>
 			</div>
 			<div class="form-group row">
@@ -47,14 +31,14 @@
 				<div class="col-sm-5">
 
 					<input name="subject" type="text" class="form-control"
-						placeholder="subject">
+						placeholder="subject" required>
 				</div>
 			</div>
 			<div class="form-group row">
 				<label class="col-sm-2 control-label" >내용</label>
 				<div class="col-sm-8">
 					<textarea name="content" cols="50" rows="5" class="form-control"
-						placeholder="content"></textarea>
+						placeholder="content" required></textarea>
 				</div>
 			</div>
 			<div class="form-group row">

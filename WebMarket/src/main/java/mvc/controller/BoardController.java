@@ -190,7 +190,5 @@ public class BoardController extends HttpServlet {
    		request.setAttribute("total_page", total_page);   //전체 페이지수
 		request.setAttribute("total_record",total_record); //전체 글 수
 		request.setAttribute("boardlist", boardlist);	//전체 글 리스트
-		
 	}
-
 }

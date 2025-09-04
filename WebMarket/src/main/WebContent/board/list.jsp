@@ -38,7 +38,7 @@
 						<th>조회</th>
 						<th>글쓴이</th>
 					</tr>
-					<c:forEach var="notice" items="${boardlist}">
+				<c:forEach var="notice" items="${boardlist}">
 					<tr>
 						<td>${notice.num}</td>
 						<td><a href="./BoardViewAction.do?num=${notice.num}&pageNum=${pageNum}">${notice.subject}</a></td>
@@ -46,7 +46,7 @@
 						<td>${notice.hit}</td>
 						<td>${notice.name}</td>
 					</tr>
-					</c:forEach>
+				</c:forEach>
 				</table>
 			</div>
 			<div align="center">
