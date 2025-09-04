@@ -26,11 +26,10 @@
 
 <sql:setDataSource var="dataSource"
 	url="jdbc:mysql://localhost:3306/webmarketdb"
-	driver="com.mysql.cj.jdbc.Driver" user="root" password="1234" />
+	driver="com.mysql.jdbc.Driver" user="root" password="1234" />
 
 <sql:update dataSource="${dataSource}" var="resultSet">
-   INSERT INTO member VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
-   <sql:param value="<%=id%>" />
+   UPDATE MEMBER SET PASSWORD=?, NAME=?, GENDER=?, BIRTH=?, MAIL=?, PHONE=?, ADDRESS=? WHERE ID=?
 	<sql:param value="<%=password%>" />
 	<sql:param value="<%=name%>" />
 	<sql:param value="<%=gender%>" />
@@ -38,10 +37,10 @@
 	<sql:param value="<%=mail%>" />
 	<sql:param value="<%=phone%>" />
 	<sql:param value="<%=address%>" />
-	<sql:param value="<%=timestamp%>" />
+	<sql:param value="<%=id%>" />
 </sql:update>
 
 <c:if test="${resultSet>=1}">
-	<c:redirect url="resultMember.jsp?msg=1" />
+	<c:redirect url="resultMember.jsp?msg=0" />
 </c:if>
 
