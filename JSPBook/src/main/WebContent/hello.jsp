@@ -5,7 +5,7 @@
 <meta charset="UTF-8">
 <title>HTML 문서</title>
 </head>
-<body>
+<body> 
     <%
       /* 스크립틀릿 - 자바코드 영역  */
       String bookTitle = "JSP 기초";
